@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baker Portfolio 2026</title>
+  <meta name="description" content="A one-page GitHub Pages portfolio for a baker, featuring baked goods created since January 2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem; --space-5: 1.25rem;
+      --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem; --space-16: 4rem; --space-20: 5rem;
+      --color-bg: #fbf7f1; --color-surface: #fffdf9; --color-surface-2: #f4ede4; --color-surface-offset: #efe4d6;
+      --color-border: #decfbe; --color-text: #33271e; --color-text-muted: #76675d; --color-text-faint: #a39384;
+      --color-primary: #8f4f2a; --color-primary-hover: #733d1d; --color-primary-highlight: #f0dfd1; --color-text-inverse: #fff9f2;
+      --radius-sm: 0.375rem; --radius-md: 0.75rem; --radius-lg: 1rem; --radius-xl: 1.5rem; --radius-full: 9999px;
+      --shadow-sm: 0 1px 2px rgba(51,39,30,.06); --shadow-md: 0 8px 24px rgba(51,39,30,.08); --shadow-lg: 0 18px 44px rgba(51,39,30,.12);
+      --font-display: 'Cormorant Garamond', Georgia, serif; --font-body: 'Work Sans', Arial, sans-serif;
+      --content-default: 1100px;
+    }
+    [data-theme="dark"] {
+      --color-bg: #191512; --color-surface: #221d19; --color-surface-2: #2b2520; --color-surface-offset: #352d26;
+      --color-border: #4a4037; --color-text: #f2e8dc; --color-text-muted: #d2c3b3; --color-text-faint: #9d8f81;
+      --color-primary: #d09167; --color-primary-hover: #e5aa84; --color-primary-highlight: #44342a; --color-text-inverse: #221913;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,.2); --shadow-md: 0 8px 24px rgba(0,0,0,.28); --shadow-lg: 0 18px 44px rgba(0,0,0,.38);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100dvh; font-family: var(--font-body); font-size: var(--text-base); line-height: 1.6;
+      color: var(--color-text); background:
+      radial-gradient(circle at top left, var(--color-primary-highlight), transparent 30%),
+      linear-gradient(180deg, var(--color-bg), var(--color-surface));
+    }
+    img, svg { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: 0; background: none; }
+    :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; border-radius: var(--radius-sm); }
+    .skip-link { position:absolute; left:-999px; top:var(--space-3); background:var(--color-primary); color:var(--color-text-inverse); padding:var(--space-3) var(--space-4); border-radius:var(--radius-full); z-index:1000; }
+    .skip-link:focus { left: var(--space-3); }
+    .container { width:min(calc(100% - 2rem), var(--content-default)); margin-inline:auto; }
+    .section { padding: clamp(var(--space-12), 8vw, var(--space-20)) 0; }
+    .eyebrow { display:inline-flex; gap:var(--space-2); align-items:center; padding:var(--space-2) var(--space-3); background:var(--color-primary-highlight); color:var(--color-primary); border-radius:var(--radius-full); font-size:var(--text-xs); letter-spacing:.08em; text-transform:uppercase; font-weight:700; }
+    header { position: sticky; top: 0; z-index: 20; backdrop-filter: blur(12px); background: color-mix(in srgb, var(--color-bg) 85%, transparent); border-bottom: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent); }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:var(--space-4); min-height:72px; }
+    .brand { display:flex; align-items:center; gap:var(--space-3); font-weight:700; }
+    .brand svg { width:40px; height:40px; color:var(--color-primary); }
+    .nav-links { display:flex; gap:var(--space-4); flex-wrap:wrap; font-size:var(--text-sm); color:var(--color-text-muted); }
+    .nav-actions { display:flex; align-items:center; gap:var(--space-3); }
+    .theme-toggle { width:44px; height:44px; display:grid; place-items:center; border-radius:50%; background:var(--color-surface); border:1px solid color-mix(in srgb, var(--color-text) 10%, transparent); box-shadow:var(--shadow-sm); }
+    .btn { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:0 var(--space-5); border-radius:var(--radius-full); font-size:var(--text-sm); font-weight:600; }
+    .btn-primary { background:var(--color-primary); color:var(--color-text-inverse); }
+    .btn-primary:hover { background:var(--color-primary-hover); }
+    .btn-secondary { border:1px solid color-mix(in srgb, var(--color-text) 12%, transparent); background:var(--color-surface); }
+    .hero { display:grid; grid-template-columns: 1.1fr .9fr; gap:clamp(var(--space-8), 5vw, var(--space-16)); align-items:center; }
+    .hero h1 { font-family:var(--font-display); font-size:var(--text-2xl); line-height:.95; margin:var(--space-5) 0; max-width:12ch; }
+    .hero p { color:var(--color-text-muted); max-width:58ch; }
+    .hero-actions { display:flex; gap:var(--space-3); flex-wrap:wrap; margin-top:var(--space-6); }
+    .hero-card { background:var(--color-surface); border:1px solid color-mix(in srgb, var(--color-text) 10%, transparent); border-radius:var(--radius-xl); padding:var(--space-5); box-shadow:var(--shadow-lg); }
+    .hero-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:var(--space-4); }
+    .mini-card { background:var(--color-surface-2); border-radius:var(--radius-lg); padding:var(--space-4); min-height:150px; display:flex; flex-direction:column; justify-content:flex-end; position:relative; overflow:hidden; }
+    .mini-card::before { content:''; position:absolute; inset:0; background:linear-gradient(180deg, transparent, rgba(0,0,0,.16)); }
+    .mini-card span, .mini-card strong { position:relative; z-index:1; color:white; }
+    .mini-1 { background:linear-gradient(160deg, #d6a779, #8f4f2a); }
+    .mini-2 { background:linear-gradient(160deg, #b86553, #5e2e22); }
+    .mini-3 { background:linear-gradient(160deg, #e6c58a, #9f6f2a); }
+    .mini-4 { background:linear-gradient(160deg, #d69487, #7a3f4d); }
+    .section-head { display:flex; flex-wrap:wrap; justify-content:space-between; gap:var(--space-4); align-items:end; margin-bottom:var(--space-8); }
+    .section-head h2 { font-family:var(--font-display); font-size:var(--text-xl); }
+    .section-head p { color:var(--color-text-muted); max-width:58ch; }
+    .portfolio-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-4); }
+    .card { background:var(--color-surface); border:1px solid color-mix(in srgb, var(--color-text) 10%, transparent); border-radius:var(--radius-xl); overflow:hidden; box-shadow:var(--shadow-sm); }
+    .card-media { aspect-ratio: 4 / 3; display:grid; place-items:center; background:linear-gradient(135deg, var(--color-surface-offset), var(--color-primary-highlight)); color:var(--color-primary); font-size:var(--text-sm); text-align:center; padding:var(--space-5); }
+    .card-body { padding:var(--space-5); }
+    .card-body h3 { font-size:var(--text-lg); margin-bottom:var(--space-2); }
+    .meta { color:var(--color-text-muted); font-size:var(--text-sm); }
+    .folder-box { margin-top:var(--space-8); background:var(--color-surface); border:1px solid color-mix(in srgb, var(--color-text) 10%, transparent); border-radius:var(--radius-xl); padding:var(--space-6); box-shadow:var(--shadow-md); }
+    pre { white-space:pre-wrap; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size:var(--text-sm); color:var(--color-text-muted); }
+    .about-wrap, .contact-wrap { display:grid; grid-template-columns:repeat(2,1fr); gap:var(--space-6); }
+    .panel { background:var(--color-surface); border-radius:var(--radius-xl); padding:var(--space-6); border:1px solid color-mix(in srgb, var(--color-text) 10%, transparent); box-shadow:var(--shadow-md); }
+    .stats { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-4); margin-top:var(--space-5); }
+    .stat { background:var(--color-surface-2); border-radius:var(--radius-lg); padding:var(--space-4); }
+    .stat strong { display:block; font-family:var(--font-display); font-size:var(--text-xl); }
+    .testimonials { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-4); }
+    blockquote { background:var(--color-surface); border-radius:var(--radius-xl); padding:var(--space-6); border:1px solid color-mix(in srgb, var(--color-text) 10%, transparent); box-shadow:var(--shadow-sm); }
+    blockquote p { color:var(--color-text-muted); }
+    blockquote footer { margin-top:var(--space-4); font-size:var(--text-sm); color:var(--color-text); font-weight:600; }
+    .contact-list { display:grid; gap:var(--space-3); margin-top:var(--space-5); }
+    .contact-item { display:flex; align-items:center; justify-content:space-between; gap:var(--space-4); padding:var(--space-4); border-radius:var(--radius-lg); background:var(--color-surface-2); }
+    footer { padding:var(--space-8) 0 var(--space-12); color:var(--color-text-muted); }
+    @media (max-width: 980px) {
+      .hero, .about-wrap, .contact-wrap, .testimonials { grid-template-columns:1fr; }
+      .portfolio-grid { grid-template-columns:repeat(2,1fr); }
+      .stats { grid-template-columns:1fr; }
+    }
+    @media (max-width: 680px) {
+      .nav { align-items:flex-start; padding:var(--space-3) 0; flex-direction:column; }
+      .nav-links { gap:var(--space-3); }
+      .hero-grid, .portfolio-grid { grid-template-columns:1fr; }
+      .section-head { align-items:flex-start; }
+    /* Namari‑style image grid down the page */
+
+.gallery-section {
+  background: #fafafa;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 4rem 0;
+}
+
+.container {
+  width: min(110ch, 90%);
+  margin-inline: auto;
+}
+
+.gallery-section .section-head {
+  margin-bottom: 2rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.gallery-item {
+  aspect-ratio: 4 / 3;
+  background: #f0f0f0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 980px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Baker portfolio home">
+        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <path d="M18 45c0-10 7-18 14-18s14 8 14 18" />
+          <path d="M15 45h34" />
+          <path d="M24 24c0-5 3-9 8-11 5 2 8 6 8 11" />
+          <path d="M32 13v14" />
+          <path d="M27 20c1 2 3 3 5 3s4-1 5-3" />
+          <path d="M20 45c0 4 2 6 4 6h16c2 0 4-2 4-6" />
+        </svg>
+        <span>Crumb &amp; Bloom</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#portfolio">Portfolio</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#about">About</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a class="btn btn-primary" href="#contact">Book a bake</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container hero">
+        <div>
+          <span class="eyebrow">Baked since Jan 2026</span>
+          <h1>A warm one-page showcase for a baker’s best work.</h1>
+          <p>This placeholder portfolio is designed for GitHub Pages and gives the baker a simple home for cakes, pastries, breads, and weekly creations. Replace the sample cards with real photos from each week, then publish the site as a clean portfolio and enquiry page.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#portfolio">See the bakes</a>
+            <a class="btn btn-secondary" href="#timeline">View folder plan</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-grid">
+            <article class="mini-card mini-1"><span>Signature cakes</span><strong>Celebration layers</strong></article>
+            <article class="mini-card mini-2"><span>Weekly pastries</span><strong>Small-batch treats</strong></article>
+            <article class="mini-card mini-3"><span>Seasonal loaves</span><strong>Rustic breads</strong></article>
+            <article class="mini-card mini-4"><span>Custom orders</span><strong>Creative finishes</strong></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Portfolio grid</span>
+            <h2>Sample baked goods showcase</h2>
+          </div>
+          <p>Each card can later be linked to real images from the monthly week folders. For now, these serve as placeholders for the baker’s growing 2026 body of work.</p>
+        </div>
+        <div class="portfolio-grid">
+          <article class="card"><div class="card-media">Add photo from<br>2026/jan/week1</div><div class="card-body"><h3>Vanilla berry celebration cake</h3><p class="meta">January · Week 1 · Custom cake</p></div></article>
+          <article class="card"><div class="card-media">Add photo from<br>2026/jan/week3</div><div class="card-body"><h3>Caramel pastry box</h3><p class="meta">January · Week 3 · Pastries</p></div></article>
+          <article class="card"><div class="card-media">Add photo from<br>2026/feb/week2</div><div class="card-body"><h3>Chocolate drip birthday cake</h3><p class="meta">February · Week 2 · Celebration cake</p></div></article>
+          <article class="card"><div class="card-media">Add photo from<br>2026/march/week1</div><div class="card-body"><h3>Country sourdough loaf</h3><p class="meta">March · Week 1 · Bread</p></div></article>
+          <article class="card"><div class="card-media">Add photo from<br>2026/april/week2</div><div class="card-body"><h3>Spring cupcake set</h3><p class="meta">April · Week 2 · Cupcakes</p></div></article>
+          <article class="card"><div class="card-media">Add photo from<br>2026/april/week4</div><div class="card-body"><h3>Wedding dessert table</h3><p class="meta">April · Week 4 · Event bake</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="timeline">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Image workflow</span>
+            <h2>Folder structure for weekly uploads</h2>
+          </div>
+          <p>This folder layout makes it easy to collect images week by week, then swap the placeholder cards with real baked goods as the portfolio grows.</p>
+        </div>
+        <div class="folder-box">
+<pre>2026/
+  jan/
+    week1/
+    week2/
+    week3/
+    week4/
+  feb/
+    week1/
+    week2/
+    week3/
+    week4/
+  march/
+    week1/
+    week2/
+    week3/
+    week4/
+  april/
+    week1/
+    week2/
+    week3/
+    week4/</pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-wrap">
+        <div class="panel">
+          <span class="eyebrow">About the baker</span>
+          <h2 style="font-family:var(--font-display);font-size:var(--text-xl);margin:var(--space-4) 0;">A portfolio that feels handmade, not overbuilt.</h2>
+          <p>This layout is meant to be affordable, simple to update, and strong enough to act as a polished placeholder until the baker is ready for a bigger website. It gives equal focus to beautiful product imagery, a short personal story, and a direct path for enquiries.</p>
+          <div class="stats">
+            <div class="stat"><strong>16</strong><span>Weekly folders ready</span></div>
+            <div class="stat"><strong>1</strong><span>Single-page GitHub site</span></div>
+            <div class="stat"><strong>4</strong><span>Months structured</span></div>
+          </div>
+        </div>
+        <div class="panel">
+          <span class="eyebrow">How to use it</span>
+          <ol style="display:grid;gap:var(--space-4);padding-left:1.2rem;">
+            <li>Drop bakery photos into the matching month and week folders.</li>
+            <li>Replace the sample cards with real image paths and captions.</li>
+            <li>Update contact details, testimonials, and brand name.</li>
+            <li>Push the folder to GitHub and publish with GitHub Pages.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Social proof</span>
+            <h2>Placeholder testimonials section</h2>
+          </div>
+          <p>These are sample quotes only. Replace them with real client comments from cake orders, events, or repeat customers.</p>
+        </div>
+        <div class="testimonials">
+          <blockquote><p>“Our birthday cake looked beautiful and tasted even better. Everyone asked who made it.”</p><footer>Sample client · Celebration order</footer></blockquote>
+          <blockquote><p>“The pastry box was elegant, fresh, and clearly made with care. We’ll order again.”</p><footer>Sample client · Weekend order</footer></blockquote>
+          <blockquote><p>“The baker captured exactly the look we wanted for our dessert table and made it feel special.”</p><footer>Sample client · Event order</footer></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-wrap">
+        <div class="panel">
+          <span class="eyebrow">Contact</span>
+          <h2 style="font-family:var(--font-display);font-size:var(--text-xl);margin:var(--space-4) 0;">Ready for enquiries and custom orders</h2>
+          <p>Add the baker’s real details below, then use this section as the main conversion point for WhatsApp, Instagram, email, or order requests.</p>
+          <div class="contact-list">
+            <div class="contact-item"><span>Email</span><strong>baker@example.com</strong></div>
+            <div class="contact-item"><span>Instagram</span><strong>@crumbandbloom</strong></div>
+            <div class="contact-item"><span>WhatsApp</span><strong>+27 00 000 0000</strong></div>
+            <div class="contact-item"><span>Location</span><strong>Cape Town, South Africa</strong></div>
+          </div>
+        </div>
+        <div class="panel">
+          <span class="eyebrow">Publishing notes</span>
+          <p>This file is ready to go into a GitHub repository as a static site. Rename <strong>baker-portfolio.html</strong> to <strong>index.html</strong> when you publish on GitHub Pages, or keep the filename and link to it from a repo landing page.</p>
+          <p style="margin-top:var(--space-4);">Store weekly photos in the included folders, keep filenames simple, and use web-friendly image sizes for faster page loads.</p>
+          <div style="margin-top:var(--space-6); display:flex; gap:var(--space-3); flex-wrap:wrap;">
+            <a class="btn btn-primary" href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>
+            <a class="btn btn-secondary" href="https://github.com/topics/portfolio-website" target="_blank" rel="noopener noreferrer">Static portfolio refs</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">Built as a lightweight 2026 bakery portfolio placeholder for GitHub Pages.</div>
+  </footer>
+
+  <script>
+    (function(){
+      const toggle = document.querySelector('[data-theme-toggle]');
+      const root = document.documentElement;
+      let theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      root.setAttribute('data-theme', theme);
+      const render = () => {
+        toggle.setAttribute('aria-label', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode');
+        toggle.innerHTML = theme === 'dark'
+          ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+          : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+      };
+      render();
+      toggle.addEventListener('click', () => { theme = theme === 'dark' ? 'light' : 'dark'; root.setAttribute('data-theme', theme); render(); });
+    })();
+  </script>
+</body>
+</html>
